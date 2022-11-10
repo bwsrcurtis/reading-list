@@ -9,6 +9,16 @@ h1, h2, h3, h4, h5, p {
     margin: 0;
 }
 
+button {
+    border-radius: 5rem;
+    border-style: none;
+    padding: .5rem 1rem;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
 .header {
     width: 100vw;
     background-color: #1f2937;
@@ -22,7 +32,7 @@ h1, h2, h3, h4, h5, p {
 }
 
 .form {
-    padding: 1rem 1rem;
+    padding: 2rem 1rem 1rem 1rem;
     display: flex;
     justify-content: center;
     /* align-items: center; */
@@ -47,27 +57,96 @@ h1, h2, h3, h4, h5, p {
     row-gap: 1%;
 }
 
+
 .book-card {
-    border-radius: 5px;
+    border-radius: 50px;
     color:#f9faf8;
     padding: 3%;
     width: 20vw;
     height: 40vh;
     background-color: #3a4a61;
     display: flex;
+    gap: 2rem;
     flex-direction: column;
     justify-content: space-around;
-    align-content: flex-start;
+    /* align-content: flex-start; */
 }
 
-.book-card > .remove {
+@media screen and (max-width: 990px) {
+    .card-container {
+        grid-template-columns: auto auto auto;
+    }
+    .book-card {
+        width: 30vw;
+        height: 40vh;
+    }
+}
+
+@media screen and (max-width: 775px) {
+    .card-container {
+        grid-template-columns: auto auto;
+    }
+    .book-card {
+        width: 40vw;
+        height: 40vh;
+    }
+    .form {
+        flex-direction: column;
+        align-items: left;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .card-container {
+        grid-template-columns: auto;
+    }
+    .book-card {
+        width: 80vw;
+        height: 40vh;
+    }
+    .form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.title-div {
+    align-self: auto;
+    margin-top: 20px;
+}
+
+.title-div > h2 {
+    font-size: xx-large;
+}
+
+.title-div > h3 {
+    /* align-self: start; */
+    font-size: large;
+    margin-top: .5rem;
+}
+
+.book-card > p {
+    text-align: right;
+    align-self: flex-end;
+    margin-top: auto;
+}
+
+.button-div {
+    align-self: center;
+}
+
+.button-div > button {
+    margin: .25rem;
+}
+
+.button-div > .remove {
     background-color: red;
 }
 
-.book-card > .incomplete {
+.button-div > .incomplete {
     background-color: lightsalmon;
 }
 
-.book-card > .complete {
+.button-div > .complete {
     background-color: darkolivegreen;
 }
